@@ -144,13 +144,31 @@ class Faction {
 
     /**
      * 
-     * Cette fonction permet de supprimer une faction
+     * Cette fonction permet de créer une faction
      * 
      * Entries :
      * 
-     * $id = variable contenant l'id de la faction
+     * $nom = variable contenant le nom de la faction
+     * $couleur = variable contenant la couleur de la faction
     */
-    public function setFaction($id) {
+    public function setFaction($nom, $couleur) {
+        $req = $this->_bdd->prepare("INSERT INTO Faction SET nom = ?, couleur = ?");
+        $req->execute(array($nom, $couleur));
+        
+        $this->_nom = $nom;
+        $this->_couleur = $couleur;
+
+    }
+
+    /**
+     * 
+     * Cette fonction permet d'afficher les factions
+     * 
+     * Entries :
+     * 
+     * no entreies
+    */
+    public function showFaction() {
         
 
     }
