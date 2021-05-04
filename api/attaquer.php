@@ -1,8 +1,9 @@
-<?php
+<?php //fichier modifier par M Vollet
 //cette api doit etre lancé pour attaquer un id
 //cette API retourne un tableau avec idDuPersoattaque, sa vie restant et sa vie de base
 // cette api retour un tableau avec 0 si elle n'a pas eccecuter le code attendu
 //une API ne dois sortir qu'un seul Echo celui de la reponse !!!!
+
 session_start();
 include "../session.php"; 
 $reponse[0]=0;
@@ -10,6 +11,7 @@ if($access){
     if(isset($_GET["id"]) && isset($_GET["type"])){
 
         //on récupere la force du perso en cours
+        //un joueur est un USER
         $Attaquant = $Joueur1->getPersonnage();
         $Attaquant->addXP(2);
         $message="";
@@ -20,7 +22,6 @@ if($access){
 
                 //attaque sur perso
             if($_GET["type"]==0 ){
-
                 $Deffensseur = new Personnage($mabase);
                 $Deffensseur->setPersonnageByIdWithoutMap($_GET["id"]);
                 $vieMax=$Deffensseur->getVieMax();

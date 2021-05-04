@@ -26,6 +26,11 @@ session_start();
     }
     if($access){
 
+        $user = "lapro_site";
+        $pass = "TDataSource1234";
+      
+        $mabase = new PDO('mysql:host=127.0.0.1;dbname=lapro_virus', $user, $pass);
+
         $idMap = 0; //choisissez une map pour faire votre test
         $idEntitePersonnage = 1; //choisissez un pero de test
         echo '<div class="TestIntegration"> TEST ITEM';
@@ -48,6 +53,10 @@ session_start();
         echo "</div>" ;
         echo '<div class="TestIntegration"> TEST MOB';
             include "testUnitaire/testMob.php"; 
+        echo "</div>" ;
+        echo '<div class="TestIntegration"> TEST MOB';
+            //test de Boucher
+            include "testUnitaire/testUser.php"; 
         echo "</div>" ;
 
 

@@ -3,9 +3,10 @@ include "class/Entite.php";
 include "class/User.php";
 include "class/Personnage.php";
 include "class/Map.php";
-include "class/Item.php";
 include "class/Mob.php";
 include "class/Tooltip.php";
+include "class/Objet.php";
+include "class/Item.php";
 include "class/Equipement.php";
 include "class/Arme.php";
 include "class/Armure.php";
@@ -17,9 +18,9 @@ $access = null;
 $errorMessage="";
 
 try{
-    $user = "lapro_site";
-    $pass = "TDataSource1234";
-    $mabase = new PDO('mysql:host=mysql-lapro.alwaysdata.net;dbname=lapro_virus', $user, $pass);
+    $user = "covid";
+    $pass = "covid";
+    $mabase = new PDO('mysql:host=localhost;dbname=covid', $user, $pass);
     //$mabase = new PDO('mysql:host=127.0.0.1;dbname=lapro_virus', $user, $pass);
 }catch(Exception $e){
     $errorMessage .= $e->getMessage();
